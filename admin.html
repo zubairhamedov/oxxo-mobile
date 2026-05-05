@@ -8,7 +8,6 @@
     :root{--gold:#C9A84C;--gold2:#E8C97A;--dark:#0A0A0A;--card:#141414;--card2:#1E1E1E;--border:#2A2A2A;--text:#FFF;--muted:#666;--red:#FF453A;--green:#30D158}
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
     body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',sans-serif;background:var(--dark);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
-
     #login-screen{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;background:radial-gradient(ellipse at top,#1a1400,#0a0a0a)}
     .login-logo{width:90px;height:90px;border-radius:20px;object-fit:cover;margin-bottom:16px;border:1px solid rgba(201,168,76,0.3);box-shadow:0 0 30px rgba(201,168,76,0.2)}
     .login-title{font-size:26px;font-weight:900;letter-spacing:3px;color:var(--gold2);margin-bottom:4px}
@@ -22,7 +21,6 @@
     .login-btn{width:100%;max-width:340px;background:var(--gold);color:#000;border:none;border-radius:14px;padding:15px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity 0.2s}
     .login-btn:active{opacity:0.8}
     .error-msg{color:var(--red);font-size:13px;margin-top:10px;display:none;text-align:center}
-
     #admin-screen{display:none}
     header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.95);backdrop-filter:blur(20px);border-bottom:0.5px solid rgba(201,168,76,0.15);padding:12px 18px;display:flex;align-items:center;justify-content:space-between}
     .logo{display:flex;align-items:center;gap:10px}
@@ -30,27 +28,32 @@
     .logo-text .name{font-size:15px;font-weight:800;letter-spacing:1px;color:var(--gold2)}
     .logo-text .sub{font-size:11px;color:var(--muted)}
     .logout-btn{background:rgba(255,69,58,0.1);border:0.5px solid rgba(255,69,58,0.3);color:var(--red);padding:7px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
-
     .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
     .stat-card{background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:14px}
     .stat-card .sl{font-size:11px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px}
     .stat-card .sv{font-size:26px;font-weight:800;color:var(--gold2)}
-
     .tabs{display:flex;margin:0 16px 16px;background:var(--card);border-radius:12px;padding:3px;border:0.5px solid var(--border)}
     .tab-btn{flex:1;padding:9px;border:none;background:none;color:var(--muted);font-size:13px;font-weight:600;border-radius:9px;cursor:pointer;font-family:inherit;transition:all 0.2s}
     .tab-btn.active{background:var(--gold);color:#000}
     .tab-content{display:none}
     .tab-content.active{display:block}
-
     .form-section{padding:0 16px 20px}
-    .form-title{font-size:18px;font-weight:700;margin-bottom:16px;letter-spacing:-0.3px}
+    .form-title{font-size:18px;font-weight:700;margin-bottom:16px}
     .field{margin-bottom:12px}
     .field label{display:block;font-size:11px;color:var(--muted);font-weight:600;margin-bottom:5px;letter-spacing:0.5px;text-transform:uppercase}
-    .field input,.field select,.field textarea{width:100%;background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:15px;font-family:inherit;outline:none;-webkit-appearance:none;transition:border-color 0.2s;resize:none}
-    .field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(201,168,76,0.4)}
-    .field input::placeholder,.field textarea::placeholder{color:#333}
+    .field input,.field select{width:100%;background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;color:var(--text);font-size:15px;font-family:inherit;outline:none;-webkit-appearance:none;transition:border-color 0.2s}
+    .field input:focus,.field select:focus{border-color:rgba(201,168,76,0.4)}
+    .field input::placeholder{color:#333}
     .field select option{background:#141414}
-
+    .section-sep{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin:16px 0 10px;padding-bottom:8px;border-bottom:0.5px solid var(--border)}
+    .specs-builder-title{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:8px;letter-spacing:0.5px;text-transform:uppercase}
+    .spec-item-row{display:flex;gap:8px;margin-bottom:8px;align-items:center}
+    .spec-item-row input{flex:1;background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text);font-size:14px;font-family:inherit;outline:none}
+    .spec-item-row input:focus{border-color:rgba(201,168,76,0.4)}
+    .spec-item-row input::placeholder{color:#333}
+    .remove-spec{background:rgba(255,69,58,0.1);border:0.5px solid rgba(255,69,58,0.2);color:var(--red);padding:10px 12px;border-radius:8px;font-size:14px;cursor:pointer;flex-shrink:0}
+    .add-spec-btn{width:100%;background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.2);color:var(--gold2);padding:11px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;margin-bottom:4px}
+    .add-spec-btn:active{background:rgba(201,168,76,0.2)}
     .img-upload{width:100%;border:1.5px dashed var(--border);border-radius:14px;padding:24px;text-align:center;cursor:pointer;position:relative;overflow:hidden;transition:border-color 0.2s}
     .img-upload:active{border-color:var(--gold)}
     .img-upload input{position:absolute;inset:0;opacity:0;cursor:pointer}
@@ -60,31 +63,15 @@
     #preview-wrap{display:none;margin-top:12px;position:relative}
     #preview-wrap img{width:100%;border-radius:12px;max-height:200px;object-fit:cover}
     .remove-img{position:absolute;top:8px;right:8px;background:rgba(255,69,58,0.9);color:white;border:none;border-radius:50%;width:28px;height:28px;font-size:13px;cursor:pointer}
-
-    /* SPECS */
-    .specs-builder{margin-bottom:12px}
-    .specs-builder-title{font-size:11px;color:var(--muted);font-weight:600;margin-bottom:8px;letter-spacing:0.5px;text-transform:uppercase}
-    .spec-item-row{display:flex;gap:8px;margin-bottom:8px;align-items:center}
-    .spec-item-row input{flex:1;background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text);font-size:14px;font-family:inherit;outline:none}
-    .spec-item-row input:focus{border-color:rgba(201,168,76,0.4)}
-    .spec-item-row input::placeholder{color:#333}
-    .remove-spec{background:rgba(255,69,58,0.1);border:0.5px solid rgba(255,69,58,0.2);color:var(--red);padding:10px;border-radius:8px;font-size:14px;cursor:pointer;flex-shrink:0}
-    .add-spec-btn{width:100%;background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.2);color:var(--gold2);padding:11px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s}
-    .add-spec-btn:active{background:rgba(201,168,76,0.2)}
-
     .submit-btn{width:100%;background:var(--gold);color:#000;border:none;border-radius:14px;padding:15px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;margin-top:8px;transition:opacity 0.2s}
     .submit-btn:disabled{opacity:0.5}
     .submit-btn:active{opacity:0.8}
-
-    .section-title{font-size:13px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin:16px 0 10px;padding-bottom:8px;border-bottom:0.5px solid var(--border)}
-
     .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);padding:12px 24px;border-radius:30px;font-weight:600;font-size:14px;transition:transform 0.3s ease;z-index:999;white-space:nowrap;background:var(--card2);color:var(--text)}
     .toast.success{background:#1c2a1c;color:var(--green);border:0.5px solid rgba(48,209,88,0.3)}
     .toast.error-toast{background:#2a1c1c;color:var(--red);border:0.5px solid rgba(255,69,58,0.3)}
     .toast.show{transform:translateX(-50%) translateY(0)}
-
     .list-section{padding:0 16px 100px}
-    .list-title{font-size:18px;font-weight:700;margin-bottom:14px;letter-spacing:-0.3px}
+    .list-title{font-size:18px;font-weight:700;margin-bottom:14px}
     .prod-item{background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:12px;margin-bottom:10px;display:flex;gap:12px;align-items:center;animation:fadeUp 0.4s ease both}
     @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
     .prod-item img{width:60px;height:60px;border-radius:10px;object-fit:cover;background:var(--card2);flex-shrink:0}
@@ -95,7 +82,6 @@
     .item-btns{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
     .edit-btn{background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.2);color:var(--gold2);padding:7px 10px;border-radius:8px;font-size:14px;cursor:pointer}
     .delete-btn{background:rgba(255,69,58,0.1);border:0.5px solid rgba(255,69,58,0.2);color:var(--red);padding:7px 10px;border-radius:8px;font-size:14px;cursor:pointer}
-
     .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(16px);z-index:200;display:none;align-items:flex-end;justify-content:center}
     .modal-overlay.open{display:flex;animation:fadeIn 0.2s ease}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -110,7 +96,7 @@
 <body>
 
 <div id="login-screen">
-  <img class="login-logo" src="LOGO_URL" alt="OXXO">
+  <img class="login-logo" src="https://dqldbjhncchdaftbzvwf.supabase.co/storage/v1/object/public/products/IMG_6043.jpeg" alt="OXXO">
   <div class="login-title">OXXO MOBILE</div>
   <div class="login-sub">Admin Panel</div>
   <div class="input-wrap">
@@ -124,7 +110,7 @@
 <div id="admin-screen">
   <header>
     <div class="logo">
-      <img src="LOGO_URL" alt="OXXO">
+      <img src="https://dqldbjhncchdaftbzvwf.supabase.co/storage/v1/object/public/products/IMG_6043.jpeg" alt="OXXO">
       <div class="logo-text">
         <div class="name">OXXO MOBILE</div>
         <div class="sub">Admin Panel</div>
@@ -146,7 +132,6 @@
   <div id="tab-add" class="tab-content active">
     <div class="form-section">
       <div class="form-title">Yangi mahsulot</div>
-
       <div class="field">
         <label>Kategoriya</label>
         <select id="p-cat">
@@ -157,31 +142,29 @@
       <div class="field"><label>Mahsulot nomi</label><input type="text" id="p-name" placeholder="iPhone 15 Pro Max 256GB"/></div>
       <div class="field"><label>Narxi (so'm)</label><input type="number" id="p-price" placeholder="12000000"/></div>
 
-      <div class="section-title">📞 Kontakt ma'lumotlari</div>
-      <div class="field"><label>Telefon raqam</label><input type="tel" id="p-phone" placeholder="+998901234567"/></div>
-      <div class="field"><label>WhatsApp raqam</label><input type="tel" id="p-whatsapp" placeholder="+998901234567"/></div>
-      <div class="field"><label>Telegram (username)</label><input type="text" id="p-telegram" placeholder="username (@ siz)"/></div>
-      <div class="field"><label>Instagram (username)</label><input type="text" id="p-instagram" placeholder="username (@ siz)"/></div>
+      <div class="section-sep">📋 Характеристикалар</div>
+      <div class="specs-builder-title">Хусусият ва қийматини қўшинг</div>
+      <div id="specs-list"></div>
+      <button class="add-spec-btn" onclick="addSpecRow()">＋ Характеристика қўшиш</button>
 
-      <div class="section-title">📋 Характеристикалар</div>
-      <div class="specs-builder">
-        <div class="specs-builder-title">Хусусият + Қиймат қўшинг</div>
-        <div id="specs-list"></div>
-        <button class="add-spec-btn" onclick="addSpecRow()">+ Характеристика қўшиш</button>
+      <div class="section-sep">📞 Контакт</div>
+      <div class="field"><label>Telefon raqam</label><input type="tel" id="p-phone" placeholder="+996997606060"/></div>
+      <div class="field"><label>WhatsApp</label><input type="tel" id="p-whatsapp" placeholder="+996997606060"/></div>
+      <div class="field"><label>Telegram username</label><input type="text" id="p-telegram" placeholder="username (@ siz)"/></div>
+      <div class="field"><label>Instagram username</label><input type="text" id="p-instagram" placeholder="username (@ siz)"/></div>
+
+      <div class="section-sep">🖼️ Rasm</div>
+      <div class="img-upload" id="upload-area">
+        <input type="file" id="img-input" accept="image/*" onchange="previewImg(this)"/>
+        <div class="up-icon">🖼️</div>
+        <div class="up-label">Rasm tanlash</div>
+        <div class="up-sub">Galereyadan tanlang</div>
+      </div>
+      <div id="preview-wrap">
+        <img id="preview-img" src="" alt=""/>
+        <button class="remove-img" onclick="removeImg()">✕</button>
       </div>
 
-      <div class="field"><label>Rasm</label>
-        <div class="img-upload" id="upload-area">
-          <input type="file" id="img-input" accept="image/*" onchange="previewImg(this)"/>
-          <div class="up-icon">🖼️</div>
-          <div class="up-label">Rasm tanlash</div>
-          <div class="up-sub">Galereyadan tanlang</div>
-        </div>
-        <div id="preview-wrap">
-          <img id="preview-img" src="" alt=""/>
-          <button class="remove-img" onclick="removeImg()">✕</button>
-        </div>
-      </div>
       <button class="submit-btn" id="submit-btn" onclick="addProduct()">➕ Qo'shish</button>
     </div>
   </div>
@@ -208,16 +191,14 @@
     </div>
     <div class="field"><label>Nomi</label><input type="text" id="e-name"/></div>
     <div class="field"><label>Narxi</label><input type="number" id="e-price"/></div>
-    <div class="section-title">📞 Kontakt</div>
+    <div class="section-sep">📋 Характеристикалар</div>
+    <div id="e-specs-list"></div>
+    <button class="add-spec-btn" onclick="addEditSpecRow()">＋ Характеристика қўшиш</button>
+    <div class="section-sep">📞 Контакт</div>
     <div class="field"><label>Telefon</label><input type="tel" id="e-phone"/></div>
     <div class="field"><label>WhatsApp</label><input type="tel" id="e-whatsapp"/></div>
     <div class="field"><label>Telegram</label><input type="text" id="e-telegram"/></div>
     <div class="field"><label>Instagram</label><input type="text" id="e-instagram"/></div>
-    <div class="section-title">📋 Характеристикалар</div>
-    <div class="specs-builder">
-      <div id="e-specs-list"></div>
-      <button class="add-spec-btn" onclick="addEditSpecRow()">+ Характеристика қўшиш</button>
-    </div>
     <button class="save-btn" onclick="saveEdit()">💾 Saqlash</button>
     <button class="cancel-btn" onclick="document.getElementById('edit-modal').classList.remove('open')">Bekor qilish</button>
   </div>
@@ -236,7 +217,11 @@
     if(!pwd)return;
     const inp=document.getElementById('pwd-input');
     try{
-      const res=await fetch('/api/add-product',{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:pwd,id:'00000000-0000-0000-0000-000000000000'})});
+      const res=await fetch('/api/add-product',{
+        method:'DELETE',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({password:pwd,id:'00000000-0000-0000-0000-000000000000'})
+      });
       if(res.status===401){
         inp.classList.add('error');
         document.getElementById('err-msg').style.display='block';
@@ -261,12 +246,10 @@
     const id=specCount++;
     const row=document.createElement('div');
     row.className='spec-item-row';
-    row.id='spec-row-'+id;
     row.innerHTML=`
-      <input type="text" placeholder="Xususiyat (masalan: RAM)" value="${k}" id="spec-k-${id}"/>
-      <input type="text" placeholder="Qiymati (masalan: 8GB)" value="${v}" id="spec-v-${id}"/>
-      <button class="remove-spec" onclick="this.parentElement.remove()">✕</button>
-    `;
+      <input type="text" placeholder="Xususiyat (RAM, Rang...)" value="${k}" id="spec-k-${id}"/>
+      <input type="text" placeholder="Qiymati (8GB, Qora...)" value="${v}" id="spec-v-${id}"/>
+      <button class="remove-spec" onclick="this.parentElement.remove()">✕</button>`;
     document.getElementById('specs-list').appendChild(row);
   }
 
@@ -274,29 +257,15 @@
     const id=editSpecCount++;
     const row=document.createElement('div');
     row.className='spec-item-row';
-    row.id='espec-row-'+id;
     row.innerHTML=`
       <input type="text" placeholder="Xususiyat" value="${k}" id="espec-k-${id}"/>
       <input type="text" placeholder="Qiymati" value="${v}" id="espec-v-${id}"/>
-      <button class="remove-spec" onclick="this.parentElement.remove()">✕</button>
-    `;
+      <button class="remove-spec" onclick="this.parentElement.remove()">✕</button>`;
     document.getElementById('e-specs-list').appendChild(row);
   }
 
-  function getSpecs(){
-    const rows=document.querySelectorAll('#specs-list .spec-item-row');
-    const specs=[];
-    rows.forEach(row=>{
-      const inputs=row.querySelectorAll('input');
-      const k=inputs[0].value.trim();
-      const v=inputs[1].value.trim();
-      if(k&&v)specs.push({k,v});
-    });
-    return specs;
-  }
-
-  function getEditSpecs(){
-    const rows=document.querySelectorAll('#e-specs-list .spec-item-row');
+  function getSpecs(listId){
+    const rows=document.querySelectorAll('#'+listId+' .spec-item-row');
     const specs=[];
     rows.forEach(row=>{
       const inputs=row.querySelectorAll('input');
@@ -327,24 +296,21 @@
     const name=document.getElementById('p-name').value.trim();
     const price=document.getElementById('p-price').value.trim();
     const file=document.getElementById('img-input').files[0];
-    if(!name||!price||!file){showToast("❌ Nom, narx va rasm kerak!",'error-toast');return}
-
+    if(!name||!price||!file){showToast('❌ Nom, narx va rasm kerak!','error-toast');return}
     const btn=document.getElementById('submit-btn');
     btn.disabled=true;btn.textContent='⏳ Yuklanmoqda...';
-
     const r=new FileReader();
     r.onload=async e=>{
       const base64=e.target.result.split(',')[1];
       const ext=file.name.split('.').pop().toLowerCase();
       const body={
-        password:adminPassword,
-        name,price,
+        password:adminPassword,name,price,
         category:document.getElementById('p-cat').value,
         phone:document.getElementById('p-phone').value.trim(),
         whatsapp:document.getElementById('p-whatsapp').value.trim(),
         telegram:document.getElementById('p-telegram').value.trim(),
         instagram:document.getElementById('p-instagram').value.trim(),
-        specs:getSpecs(),
+        specs:getSpecs('specs-list'),
         imageBase64:base64,imageExt:ext
       };
       try{
@@ -355,8 +321,7 @@
           ['p-name','p-price','p-phone','p-whatsapp','p-telegram','p-instagram'].forEach(id=>document.getElementById(id).value='');
           document.getElementById('specs-list').innerHTML='';
           specCount=0;
-          removeImg();
-          loadProducts();
+          removeImg();loadProducts();
         }else showToast('❌ '+(data.error||'Xatolik'),'error-toast');
       }catch(err){showToast('❌ Server xatoligi','error-toast')}
       btn.disabled=false;btn.textContent="➕ Qo'shish";
@@ -392,7 +357,7 @@
       whatsapp:document.getElementById('e-whatsapp').value,
       telegram:document.getElementById('e-telegram').value,
       instagram:document.getElementById('e-instagram').value,
-      specs:getEditSpecs()
+      specs:getSpecs('e-specs-list')
     };
     try{
       const res=await fetch('/api/add-product',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
