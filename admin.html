@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin — OXXO MOBILE</title>
+  <title>Админ — OXXO MOBILE</title>
   <style>
     :root{--gold:#C9A84C;--gold2:#E8C97A;--dark:#0A0A0A;--card:#141414;--card2:#1E1E1E;--border:#2A2A2A;--text:#FFF;--muted:#666;--red:#FF453A;--green:#30D158}
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -98,13 +98,13 @@
 <div id="login-screen">
   <img class="login-logo" src="https://dqldbjhncchdaftbzvwf.supabase.co/storage/v1/object/public/products/IMG_6043.jpeg" alt="OXXO">
   <div class="login-title">OXXO MOBILE</div>
-  <div class="login-sub">Admin Panel</div>
+  <div class="login-sub">Панель администратора</div>
   <div class="input-wrap">
-    <input type="password" id="pwd-input" placeholder="Parol..."/>
+    <input type="password" id="pwd-input" placeholder="Пароль..."/>
     <button class="eye-btn" onclick="toggleEye()">👁</button>
   </div>
-  <button class="login-btn" onclick="checkLogin()">Kirish</button>
-  <p class="error-msg" id="err-msg">❌ Parol noto'g'ri!</p>
+  <button class="login-btn" onclick="checkLogin()">Войти</button>
+  <p class="error-msg" id="err-msg">❌ Неверный пароль!</p>
 </div>
 
 <div id="admin-screen">
@@ -113,65 +113,64 @@
       <img src="https://dqldbjhncchdaftbzvwf.supabase.co/storage/v1/object/public/products/IMG_6043.jpeg" alt="OXXO">
       <div class="logo-text">
         <div class="name">OXXO MOBILE</div>
-        <div class="sub">Admin Panel</div>
+        <div class="sub">Панель администратора</div>
       </div>
     </div>
-    <button class="logout-btn" onclick="logout()">Chiqish</button>
+    <button class="logout-btn" onclick="logout()">Выйти</button>
   </header>
 
   <div class="stats">
-    <div class="stat-card"><div class="sl">Jami mahsulot</div><div class="sv" id="total-count">0</div></div>
-    <div class="stat-card"><div class="sl">Holat</div><div class="sv" style="color:var(--green);font-size:15px;padding-top:6px">✅ Faol</div></div>
+    <div class="stat-card"><div class="sl">Всего товаров</div><div class="sv" id="total-count">0</div></div>
+    <div class="stat-card"><div class="sl">Статус</div><div class="sv" style="color:var(--green);font-size:15px;padding-top:6px">✅ Активен</div></div>
   </div>
 
   <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('add',this)">➕ Qo'shish</button>
-    <button class="tab-btn" onclick="switchTab('list',this)">📦 Mahsulotlar</button>
+    <button class="tab-btn active" onclick="switchTab('add',this)">➕ Добавить</button>
+    <button class="tab-btn" onclick="switchTab('list',this)">📦 Товары</button>
   </div>
 
   <div id="tab-add" class="tab-content active">
     <div class="form-section">
-      <div class="form-title">Yangi mahsulot</div>
+      <div class="form-title">Новый товар</div>
       <div class="field">
-        <label>Kategoriya</label>
+        <label>Категория</label>
         <select id="p-cat">
-          <option value="telefon">📱 Telefon</option>
-          <option value="aksessuar">🎧 Aksessuar</option>
+          <option value="telefon">📱 Телефон</option>
+          <option value="aksessuar">🎧 Аксессуар</option>
         </select>
       </div>
-      <div class="field"><label>Mahsulot nomi</label><input type="text" id="p-name" placeholder="iPhone 15 Pro Max 256GB"/></div>
-      <div class="field"><label>Narxi (so'm)</label><input type="number" id="p-price" placeholder="12000000"/></div>
+      <div class="field"><label>Название товара</label><input type="text" id="p-name" placeholder="iPhone 15 Pro Max 256GB"/></div>
+      <div class="field"><label>Цена (сом)</label><input type="number" id="p-price" placeholder="12000000"/></div>
 
-      <div class="section-sep">📋 Характеристикалар</div>
-      <div class="specs-builder-title">Хусусият ва қийматини қўшинг</div>
+      <div class="section-sep">📋 Характеристики</div>
+      <div class="specs-builder-title">Добавьте характеристики товара</div>
       <div id="specs-list"></div>
-      <button class="add-spec-btn" onclick="addSpecRow()">＋ Характеристика қўшиш</button>
+      <button class="add-spec-btn" onclick="addSpecRow()">＋ Добавить характеристику</button>
 
-      <div class="section-sep">📞 Контакт</div>
-      <div class="field"><label>Telefon raqam</label><input type="tel" id="p-phone" placeholder="+996997606060"/></div>
+      <div class="section-sep">📞 Контакты</div>
+      <div class="field"><label>Номер телефона</label><input type="tel" id="p-phone" placeholder="+996997606060"/></div>
       <div class="field"><label>WhatsApp</label><input type="tel" id="p-whatsapp" placeholder="+996997606060"/></div>
-      <div class="field"><label>Telegram username</label><input type="text" id="p-telegram" placeholder="username (@ siz)"/></div>
-      <div class="field"><label>Instagram username</label><input type="text" id="p-instagram" placeholder="username (@ siz)"/></div>
+      <div class="field"><label>Telegram (username)</label><input type="text" id="p-telegram" placeholder="username (без @)"/></div>
+      <div class="field"><label>Instagram (username)</label><input type="text" id="p-instagram" placeholder="username (без @)"/></div>
 
-      <div class="section-sep">🖼️ Rasm</div>
+      <div class="section-sep">🖼️ Фото</div>
       <div class="img-upload" id="upload-area">
         <input type="file" id="img-input" accept="image/*" onchange="previewImg(this)"/>
         <div class="up-icon">🖼️</div>
-        <div class="up-label">Rasm tanlash</div>
-        <div class="up-sub">Galereyadan tanlang</div>
+        <div class="up-label">Выбрать фото</div>
+        <div class="up-sub">Выберите из галереи</div>
       </div>
       <div id="preview-wrap">
         <img id="preview-img" src="" alt=""/>
         <button class="remove-img" onclick="removeImg()">✕</button>
       </div>
-
-      <button class="submit-btn" id="submit-btn" onclick="addProduct()">➕ Qo'shish</button>
+      <button class="submit-btn" id="submit-btn" onclick="addProduct()">➕ Добавить товар</button>
     </div>
   </div>
 
   <div id="tab-list" class="tab-content">
     <div class="list-section">
-      <div class="list-title">📦 Barcha mahsulotlar</div>
+      <div class="list-title">📦 Все товары</div>
       <div id="prod-list"></div>
     </div>
   </div>
@@ -181,26 +180,26 @@
 <div class="modal-overlay" id="edit-modal">
   <div class="edit-modal">
     <div class="modal-handle"></div>
-    <div class="modal-title">✏️ Tahrirlash</div>
+    <div class="modal-title">✏️ Редактировать</div>
     <input type="hidden" id="e-id"/>
-    <div class="field"><label>Kategoriya</label>
+    <div class="field"><label>Категория</label>
       <select id="e-cat">
-        <option value="telefon">📱 Telefon</option>
-        <option value="aksessuar">🎧 Aksessuar</option>
+        <option value="telefon">📱 Телефон</option>
+        <option value="aksessuar">🎧 Аксессуар</option>
       </select>
     </div>
-    <div class="field"><label>Nomi</label><input type="text" id="e-name"/></div>
-    <div class="field"><label>Narxi</label><input type="number" id="e-price"/></div>
-    <div class="section-sep">📋 Характеристикалар</div>
+    <div class="field"><label>Название</label><input type="text" id="e-name"/></div>
+    <div class="field"><label>Цена</label><input type="number" id="e-price"/></div>
+    <div class="section-sep">📋 Характеристики</div>
     <div id="e-specs-list"></div>
-    <button class="add-spec-btn" onclick="addEditSpecRow()">＋ Характеристика қўшиш</button>
-    <div class="section-sep">📞 Контакт</div>
-    <div class="field"><label>Telefon</label><input type="tel" id="e-phone"/></div>
+    <button class="add-spec-btn" onclick="addEditSpecRow()">＋ Добавить характеристику</button>
+    <div class="section-sep">📞 Контакты</div>
+    <div class="field"><label>Телефон</label><input type="tel" id="e-phone"/></div>
     <div class="field"><label>WhatsApp</label><input type="tel" id="e-whatsapp"/></div>
     <div class="field"><label>Telegram</label><input type="text" id="e-telegram"/></div>
     <div class="field"><label>Instagram</label><input type="text" id="e-instagram"/></div>
-    <button class="save-btn" onclick="saveEdit()">💾 Saqlash</button>
-    <button class="cancel-btn" onclick="document.getElementById('edit-modal').classList.remove('open')">Bekor qilish</button>
+    <button class="save-btn" onclick="saveEdit()">💾 Сохранить</button>
+    <button class="cancel-btn" onclick="document.getElementById('edit-modal').classList.remove('open')">Отмена</button>
   </div>
 </div>
 
@@ -247,8 +246,8 @@
     const row=document.createElement('div');
     row.className='spec-item-row';
     row.innerHTML=`
-      <input type="text" placeholder="Xususiyat (RAM, Rang...)" value="${k}" id="spec-k-${id}"/>
-      <input type="text" placeholder="Qiymati (8GB, Qora...)" value="${v}" id="spec-v-${id}"/>
+      <input type="text" placeholder="Параметр (RAM, Цвет...)" value="${k}" id="spec-k-${id}"/>
+      <input type="text" placeholder="Значение (8GB, Чёрный...)" value="${v}" id="spec-v-${id}"/>
       <button class="remove-spec" onclick="this.parentElement.remove()">✕</button>`;
     document.getElementById('specs-list').appendChild(row);
   }
@@ -258,8 +257,8 @@
     const row=document.createElement('div');
     row.className='spec-item-row';
     row.innerHTML=`
-      <input type="text" placeholder="Xususiyat" value="${k}" id="espec-k-${id}"/>
-      <input type="text" placeholder="Qiymati" value="${v}" id="espec-v-${id}"/>
+      <input type="text" placeholder="Параметр" value="${k}" id="espec-k-${id}"/>
+      <input type="text" placeholder="Значение" value="${v}" id="espec-v-${id}"/>
       <button class="remove-spec" onclick="this.parentElement.remove()">✕</button>`;
     document.getElementById('e-specs-list').appendChild(row);
   }
@@ -296,9 +295,9 @@
     const name=document.getElementById('p-name').value.trim();
     const price=document.getElementById('p-price').value.trim();
     const file=document.getElementById('img-input').files[0];
-    if(!name||!price||!file){showToast('❌ Nom, narx va rasm kerak!','error-toast');return}
+    if(!name||!price||!file){showToast('❌ Введите название, цену и фото!','error-toast');return}
     const btn=document.getElementById('submit-btn');
-    btn.disabled=true;btn.textContent='⏳ Yuklanmoqda...';
+    btn.disabled=true;btn.textContent='⏳ Загрузка...';
     const r=new FileReader();
     r.onload=async e=>{
       const base64=e.target.result.split(',')[1];
@@ -317,14 +316,14 @@
         const res=await fetch('/api/add-product',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
         const data=await res.json();
         if(data.success){
-          showToast("✅ Mahsulot qo'shildi!",'success');
+          showToast('✅ Товар добавлен!','success');
           ['p-name','p-price','p-phone','p-whatsapp','p-telegram','p-instagram'].forEach(id=>document.getElementById(id).value='');
           document.getElementById('specs-list').innerHTML='';
           specCount=0;
           removeImg();loadProducts();
-        }else showToast('❌ '+(data.error||'Xatolik'),'error-toast');
-      }catch(err){showToast('❌ Server xatoligi','error-toast')}
-      btn.disabled=false;btn.textContent="➕ Qo'shish";
+        }else showToast('❌ '+(data.error||'Ошибка'),'error-toast');
+      }catch(err){showToast('❌ Ошибка сервера','error-toast')}
+      btn.disabled=false;btn.textContent='➕ Добавить товар';
     };
     r.readAsDataURL(file);
   }
@@ -362,19 +361,19 @@
     try{
       const res=await fetch('/api/add-product',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
       const data=await res.json();
-      if(data.success){showToast('✅ Saqlandi!','success');document.getElementById('edit-modal').classList.remove('open');loadProducts()}
-      else showToast('❌ '+(data.error||'Xatolik'),'error-toast');
-    }catch(e){showToast('❌ Xatolik','error-toast')}
+      if(data.success){showToast('✅ Сохранено!','success');document.getElementById('edit-modal').classList.remove('open');loadProducts()}
+      else showToast('❌ '+(data.error||'Ошибка'),'error-toast');
+    }catch(e){showToast('❌ Ошибка','error-toast')}
   }
 
   async function deleteProduct(id){
-    if(!confirm("O'chirmoqchimisiz?"))return;
+    if(!confirm('Удалить товар?'))return;
     try{
       const res=await fetch('/api/add-product',{method:'DELETE',headers:{'Content-Type':'application/json'},body:JSON.stringify({password:adminPassword,id})});
       const data=await res.json();
-      if(data.success){showToast("🗑️ O'chirildi!",'success');loadProducts()}
-      else showToast('❌ '+(data.error||'Xatolik'),'error-toast');
-    }catch(e){showToast('❌ Xatolik','error-toast')}
+      if(data.success){showToast('🗑️ Удалено!','success');loadProducts()}
+      else showToast('❌ '+(data.error||'Ошибка'),'error-toast');
+    }catch(e){showToast('❌ Ошибка','error-toast')}
   }
 
   async function loadProducts(){
@@ -383,14 +382,14 @@
       products=await res.json();
       document.getElementById('total-count').textContent=products.length;
       const list=document.getElementById('prod-list');
-      if(!products.length){list.innerHTML='<p style="color:var(--muted);font-size:14px;padding:20px 0">Hozircha mahsulot yo\'q</p>';return}
+      if(!products.length){list.innerHTML='<p style="color:var(--muted);font-size:14px;padding:20px 0">Товаров пока нет</p>';return}
       list.innerHTML=products.map((p,i)=>`
         <div class="prod-item" style="animation-delay:${i*0.04}s">
           <img src="${p.image_url}" alt="${p.name}" onerror="this.style.background='#1e1e1e'">
           <div class="prod-info">
             <div class="p-name">${p.name}</div>
-            <div class="p-price">${Number(p.price).toLocaleString()} so'm</div>
-            <div class="p-cat">${p.category==='telefon'?'📱 Telefon':'🎧 Aksessuar'}</div>
+            <div class="p-price">${Number(p.price).toLocaleString()} сом</div>
+            <div class="p-cat">${p.category==='telefon'?'📱 Телефон':'🎧 Аксессуар'}</div>
           </div>
           <div class="item-btns">
             <button class="edit-btn" onclick="openEdit('${p.id}')">✏️</button>
@@ -398,7 +397,7 @@
           </div>
         </div>
       `).join('');
-    }catch(e){document.getElementById('prod-list').innerHTML='<p style="color:var(--muted)">Xatolik</p>'}
+    }catch(e){document.getElementById('prod-list').innerHTML='<p style="color:var(--muted)">Ошибка</p>'}
   }
 </script>
 </body>
