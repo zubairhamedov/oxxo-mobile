@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OXXO MOBILE</title>
+  <title>OXXO MOBILE — Узген</title>
   <style>
     :root{--gold:#C9A84C;--gold2:#E8C97A;--dark:#0A0A0A;--card:#141414;--card2:#1E1E1E;--border:#2A2A2A;--text:#FFFFFF;--muted:#666}
     *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -16,12 +16,15 @@
     .live-badge{display:flex;align-items:center;gap:5px;background:rgba(201,168,76,0.1);border:0.5px solid rgba(201,168,76,0.3);color:var(--gold2);padding:5px 11px;border-radius:20px;font-size:11px;font-weight:600}
     .live-dot{width:5px;height:5px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+    /* HERO */
     .hero{margin:14px;border-radius:20px;padding:28px 20px 24px;background:linear-gradient(145deg,#0a0a0a,#1a1400,#2a1f00);position:relative;overflow:hidden;border:0.5px solid rgba(201,168,76,0.2)}
     .hero-glow{position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,0.15),transparent 70%);animation:glow 6s ease-in-out infinite}
     @keyframes glow{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
-    .hero-logo{width:90px;height:90px;border-radius:18px;object-fit:cover;margin-bottom:14px;border:1px solid rgba(201,168,76,0.3);box-shadow:0 0 30px rgba(201,168,76,0.2);position:relative;display:block}
-    .hero h2{font-size:30px;font-weight:900;letter-spacing:3px;color:var(--gold2);margin-bottom:4px;position:relative}
-    .hero-sub{font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;position:relative}
+    .hero-logo{width:80px;height:80px;border-radius:16px;object-fit:cover;margin-bottom:12px;border:1px solid rgba(201,168,76,0.3);box-shadow:0 0 30px rgba(201,168,76,0.2);display:block}
+    .hero-tag{display:inline-block;background:rgba(201,168,76,0.15);border:0.5px solid rgba(201,168,76,0.3);color:var(--gold2);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;margin-bottom:10px;letter-spacing:0.3px}
+    .hero h2{font-size:24px;font-weight:900;letter-spacing:1px;color:var(--gold2);margin-bottom:4px;position:relative;line-height:1.2}
+    .hero-sub{font-size:12px;color:rgba(255,255,255,0.55);margin-bottom:16px;position:relative}
     .hero-contacts{display:flex;gap:8px;flex-wrap:wrap;position:relative}
     .hc-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:12px;font-weight:600;font-size:12px;text-decoration:none;transition:transform 0.15s,opacity 0.15s}
     .hc-btn:active{transform:scale(0.95);opacity:0.8}
@@ -30,22 +33,55 @@
     .hc-tg{background:#2AABEE;color:white}
     .hc-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white}
     .hc-icon{width:15px;height:15px;flex-shrink:0}
-    .search-wrap{padding:12px 14px 6px;position:relative}
+
+    /* INFO CARDS */
+    .info-row{display:flex;gap:10px;padding:0 14px;margin-bottom:4px}
+    .info-card{flex:1;background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:12px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);transition:border-color 0.2s}
+    .info-card:active{border-color:var(--gold)}
+    .info-icon{font-size:22px;flex-shrink:0}
+    .info-text .it-label{font-size:10px;color:var(--muted);margin-bottom:2px;text-transform:uppercase;letter-spacing:0.5px}
+    .info-text .it-val{font-size:12px;font-weight:600;color:var(--text);line-height:1.3}
+    .info-text .it-sub{font-size:10px;color:var(--muted);margin-top:1px}
+
+    /* WHY US */
+    .why-section{padding:20px 14px 4px}
+    .why-title{font-size:18px;font-weight:800;margin-bottom:14px;letter-spacing:-0.3px}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .why-card{background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:14px}
+    .why-icon{font-size:24px;margin-bottom:8px}
+    .why-text{font-size:13px;font-weight:600;color:var(--text);line-height:1.3}
+
+    /* REVIEWS */
+    .reviews-section{padding:20px 14px 4px}
+    .reviews-title{font-size:18px;font-weight:800;margin-bottom:14px;letter-spacing:-0.3px}
+    .review-card{background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px}
+    .review-stars{color:var(--gold);font-size:14px;margin-bottom:6px}
+    .review-text{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.5}
+
+    /* SEARCH */
+    .search-wrap{padding:16px 14px 6px;position:relative}
     .search-input{width:100%;background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:11px 16px 11px 40px;color:var(--text);font-size:15px;font-family:inherit;outline:none;-webkit-appearance:none}
     .search-input::placeholder{color:var(--muted)}
     .search-input:focus{border-color:rgba(201,168,76,0.4)}
     .search-icon{position:absolute;left:26px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:15px;pointer-events:none}
+
+    /* CATS */
     .cats{display:flex;gap:8px;padding:10px 14px 4px;overflow-x:auto;scrollbar-width:none}
     .cats::-webkit-scrollbar{display:none}
     .cat-btn{flex-shrink:0;display:flex;align-items:center;gap:5px;padding:7px 14px;border-radius:20px;border:0.5px solid var(--border);background:var(--card);color:var(--muted);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:inherit}
     .cat-btn.active{background:var(--gold);color:#000;border-color:var(--gold);font-weight:700}
+
+    /* SORT */
     .sort-bar{display:flex;gap:8px;padding:8px 14px 10px;overflow-x:auto;scrollbar-width:none}
     .sort-bar::-webkit-scrollbar{display:none}
     .sort-btn{flex-shrink:0;padding:5px 12px;border-radius:8px;border:0.5px solid var(--border);background:none;color:var(--muted);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;transition:all 0.2s}
     .sort-btn.active{background:rgba(201,168,76,0.15);color:var(--gold2);border-color:rgba(201,168,76,0.3)}
+
     .section-head{padding:4px 16px 8px;display:flex;align-items:center;justify-content:space-between}
     .section-head h3{font-size:20px;font-weight:700;letter-spacing:-0.3px}
     .count-badge{background:var(--card2);color:var(--muted);font-size:12px;font-weight:600;padding:3px 10px;border-radius:10px}
+
+    /* PRODUCTS */
     .products{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0 14px 40px}
     .card{background:var(--card);border-radius:16px;overflow:hidden;border:0.5px solid var(--border);cursor:pointer;transition:transform 0.2s;animation:fadeUp 0.4s ease both}
     .card:active{transform:scale(0.97)}
@@ -60,12 +96,15 @@
     .card-specs{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
     .card-spec-tag{background:var(--card2);color:var(--muted);font-size:9px;padding:3px 7px;border-radius:6px}
     .call-btn{display:flex;align-items:center;justify-content:center;gap:5px;background:var(--gold);color:#000;text-decoration:none;padding:9px 0;border-radius:10px;font-size:12px;font-weight:700}
+
     .loading-wrap{grid-column:1/-1;text-align:center;padding:60px 20px}
     .spinner{width:28px;height:28px;border:2.5px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.7s linear infinite;margin:0 auto 14px}
     @keyframes spin{to{transform:rotate(360deg)}}
     .loading-wrap p,.empty p{color:var(--muted);font-size:14px}
     .empty{grid-column:1/-1;text-align:center;padding:60px 20px}
     .empty-icon{font-size:48px;margin-bottom:12px}
+
+    /* MODAL */
     .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);z-index:200;display:none;align-items:flex-end;justify-content:center}
     .modal-overlay.open{display:flex;animation:fadeIn 0.2s ease}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -94,6 +133,18 @@
     .ma-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:white}
     .ma-close{background:var(--card2);color:var(--muted)}
     .ma-icon{width:18px;height:18px;flex-shrink:0}
+
+    /* MAP MODAL */
+    .map-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.9);backdrop-filter:blur(16px);z-index:300;display:none;align-items:flex-end;justify-content:center}
+    .map-modal-overlay.open{display:flex;animation:fadeIn 0.2s ease}
+    .map-modal{background:#141414;border-radius:20px 20px 0 0;border-top:0.5px solid rgba(201,168,76,0.2);padding:20px 18px 34px;width:100%;max-height:85vh;overflow-y:auto;animation:slideUp 0.35s cubic-bezier(0.32,0.72,0,1)}
+    .map-handle{width:36px;height:4px;background:rgba(255,255,255,0.15);border-radius:2px;margin:0 auto 16px}
+    .map-title{font-size:18px;font-weight:700;margin-bottom:4px}
+    .map-addr{font-size:13px;color:var(--muted);margin-bottom:16px}
+    .map-frame{width:100%;height:220px;border-radius:14px;border:0.5px solid var(--border);overflow:hidden}
+    .map-frame iframe{width:100%;height:100%;border:none}
+    .map-open-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--gold);color:#000;border:none;border-radius:14px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:12px;text-decoration:none}
+    .map-close-btn{width:100%;background:var(--card2);border:none;color:var(--muted);padding:13px;border-radius:14px;font-size:15px;font-weight:600;cursor:pointer;margin-top:8px;font-family:inherit}
   </style>
 </head>
 <body>
@@ -103,7 +154,7 @@
     <img src="https://dqldbjhncchdaftbzvwf.supabase.co/storage/v1/object/public/products/IMG_6043.jpeg" alt="OXXO">
     <div class="logo-text">
       <div class="name">OXXO MOBILE</div>
-      <div class="sub">Магазин техники</div>
+      <div class="sub">Магазин техники • Узген</div>
     </div>
   </div>
   <div class="live-badge"><div class="live-dot"></div>LIVE</div>
@@ -112,8 +163,9 @@
 <div class="hero">
   <div class="hero-glow"></div>
   <img class="hero-logo" src="https://dqldbjhncchdaftbzvwf.supabase.co/storage/v1/object/public/products/IMG_6043.jpeg" alt="OXXO">
-  <h2>OXXO MOBILE</h2>
-  <div class="hero-sub">Магазин техники</div>
+  <div class="hero-tag">📍 Узген, Кыргызстан</div>
+  <h2>Смартфоны и аксессуары в Узгене</h2>
+  <div class="hero-sub">Лучшие цены • Оригинальная техника • Гарантия</div>
   <div class="hero-contacts">
     <a class="hc-btn hc-call" href="tel:+996997606060">
       <svg class="hc-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
@@ -134,6 +186,67 @@
   </div>
 </div>
 
+<!-- АДРЕС И РЕЖИМ РАБОТЫ -->
+<div class="info-row" style="margin-top:14px">
+  <a class="info-card" onclick="openMap()">
+    <div class="info-icon">📍</div>
+    <div class="info-text">
+      <div class="it-label">Адрес</div>
+      <div class="it-val">ул. Ленина 12, Узген</div>
+      <div class="it-sub">Нажмите для карты →</div>
+    </div>
+  </a>
+  <div class="info-card">
+    <div class="info-icon">🕐</div>
+    <div class="info-text">
+      <div class="it-label">Режим работы</div>
+      <div class="it-val">Пн–Вс: 9:00–20:00</div>
+      <div class="it-sub" id="work-status">Загрузка...</div>
+    </div>
+  </div>
+</div>
+
+<!-- ПОЧЕМУ МЫ -->
+<div class="why-section">
+  <div class="why-title">Почему выбирают OXXO MOBILE?</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🛡️</div>
+      <div class="why-text">Гарантия на все устройства</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">✅</div>
+      <div class="why-text">Только оригинальная техника</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔍</div>
+      <div class="why-text">Проверка перед покупкой</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <div class="why-text">Лучшие цены в Узгене</div>
+    </div>
+  </div>
+</div>
+
+<!-- ОТЗЫВЫ -->
+<div class="reviews-section">
+  <div class="reviews-title">Отзывы покупателей</div>
+  <div class="review-card">
+    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">Отличный магазин! Купил iPhone, всё проверили на месте. Очень доволен покупкой!</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">Быстрое обслуживание и приятные цены 👍 Рекомендую всем!</div>
+  </div>
+  <div class="review-card">
+    <div class="review-stars">⭐⭐⭐⭐⭐</div>
+    <div class="review-text">Покупаю аксессуары только здесь. Всегда большой выбор и хорошее качество.</div>
+  </div>
+</div>
+
+<!-- ПОИСК -->
 <div class="search-wrap">
   <span class="search-icon">🔍</span>
   <input class="search-input" id="search" placeholder="Поиск товаров..." oninput="renderProducts()">
@@ -160,6 +273,7 @@
   <div class="loading-wrap"><div class="spinner"></div><p>Загрузка...</p></div>
 </div>
 
+<!-- PRODUCT MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-handle-wrap"><div class="modal-handle"></div></div>
@@ -199,10 +313,38 @@
   </div>
 </div>
 
+<!-- MAP MODAL -->
+<div class="map-modal-overlay" id="map-modal">
+  <div class="map-modal">
+    <div class="map-handle"></div>
+    <div class="map-title">📍 OXXO MOBILE</div>
+    <div class="map-addr">ул. Ленина 12, Узген, Кыргызстан</div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d72.75!3d40.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ2JzEyLjAiTiA3MsKwNDUnMDAuMCJF!5e0!3m2!1sru!2skg!4v1620000000000!5m2!1sru!2skg" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <a class="map-open-btn" href="https://maps.google.com/?q=40.77,72.75" target="_blank">🗺️ Открыть в Google Maps</a>
+    <button class="map-close-btn" onclick="closeMap()">Закрыть</button>
+  </div>
+</div>
+
 <script>
   let allProducts=[];
   let currentCat='all';
   let currentSort='new';
+
+  function checkWorkStatus(){
+    const now=new Date();
+    const h=now.getHours();
+    const day=now.getDay();
+    const el=document.getElementById('work-status');
+    if(day===0&&h<9){el.textContent='Сейчас закрыто';el.style.color='#FF453A';}
+    else if(h>=9&&h<20){el.textContent='Сейчас открыто ✅';el.style.color='#30D158';}
+    else{el.textContent='Сейчас закрыто';el.style.color='#FF453A';}
+  }
+  checkWorkStatus();
+
+  function openMap(){document.getElementById('map-modal').classList.add('open')}
+  function closeMap(){document.getElementById('map-modal').classList.remove('open')}
 
   async function loadProducts(){
     try{
